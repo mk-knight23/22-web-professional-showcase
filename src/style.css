@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-bg: #f8fafc;
+}
+
+.dark {
+  --brand-bg: #0f172a;
+}
+
+body {
+  @apply bg-brand-bg text-slate-900 dark:text-slate-100 transition-colors duration-500 antialiased;
+  margin: 0;
+  display: block;
+  min-height: 100vh;
+}
+
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+#app {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.glass {
+  @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-md border border-slate-200/50 dark:border-slate-800/50;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-slate-200 dark:bg-slate-800 rounded-full;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 dark:from-white dark:via-slate-300 dark:to-white;
+}
