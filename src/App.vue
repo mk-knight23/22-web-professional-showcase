@@ -1,6 +1,11 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, watchEffect } from 'vue'
 import { usePersonalStore } from './stores/personalStore'
+import { useSettingsStore } from './stores/settings'
+import { useStatsStore } from './stores/stats'
+import { useAudio } from './composables/useAudio'
+import { useKeyboardControls } from './composables/useKeyboardControls'
+import SettingsPanel from './components/ui/SettingsPanel.vue'
 import { 
   Github, 
   Twitter, 
@@ -9,14 +14,25 @@ import {
   ArrowUpRight, 
   Moon, 
   Sun,
-  ChevronRight
+  ChevronRight,
+  Settings
 } from 'lucide-vue-next'
 import { Motion } from '@motionone/vue'
 
 const store = usePersonalStore()
+const settingsStore = useSettingsStore()
+const statsStore = useStatsStore()
+const audio = useAudio()
+const { lastAction } = useKeyboardControls()
 
 onMounted(() => {
-  if (store.isDarkMode) document.documentElement.classList.add('dark')
+  statsStore.recordVisit()
+})
+
+watchEffect(() => {
+  if (lastAction.value === 'help') {
+    settingsStore.toggleHelp()
+  }
 })
 
 const acccents = ['#10b981', '#3b82f6', '#f59e0b', '#ec4899', '#6366f1']
@@ -26,10 +42,21 @@ const experience = [
   { year: '2022', role: 'Senior Product Designer', company: 'Creative Studio' },
   { year: '2020', role: 'Vue Specialist', company: 'FinTech Hub' }
 ]
+
+function toggleTheme() {
+  audio.playClick()
+  const nextTheme = settingsStore.theme === 'dark' ? 'light' : settingsStore.theme === 'light' ? 'system' : 'dark'
+  settingsStore.setTheme(nextTheme)
+}
+
+function openSettings() {
+  audio.playClick()
+  settingsStore.toggleHelp()
+}
 </script>
 
 <template>
-  <div class="min-h-screen selection:bg-brand-accent selection:text-white">
+  <div class="min-h-screen selection:bg-brand-accent selection:text-white" :class="{ 'dark': settingsStore.isDarkMode, 'light': !settingsStore.isDarkMode }">
     <!-- Theme Toggle Floating -->
     <div class="fixed top-8 right-8 z-50 flex items-center space-x-4">
        <div class="flex p-1.5 bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl">
@@ -41,9 +68,12 @@ const experience = [
             :style="{ backgroundColor: color, border: store.accentColor === color ? '2px solid white' : 'none' }"
           ></button>
        </div>
-       <button @click="store.toggleDarkMode" class="p-3 bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl hover:bg-white/20 transition-all">
-          <Sun v-if="store.isDarkMode" :size="18" />
-          <Moon v-else :size="18" />
+       <button @click="openSettings" class="p-3 bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl hover:bg-white/20 transition-all">
+          <Settings class="text-slate-300" :size="18" />
+       </button>
+       <button @click="toggleTheme" class="p-3 bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl hover:bg-white/20 transition-all">
+          <Sun v-if="settingsStore.isDarkMode" :size="18" class="text-amber-400" />
+          <Moon v-else :size="18" class="text-blue-600" />
        </button>
     </div>
 
@@ -151,11 +181,12 @@ const experience = [
     <footer class="py-20 px-8 border-t border-slate-100 dark:border-slate-800 flex flex-col items-center space-y-8">
        <div class="text-center space-y-2">
           <p class="text-xs font-black uppercase tracking-[0.4em] text-slate-400">End of Line</p>
-          <p class="text-[10px] text-slate-500">© 2026 Crafted with Vue 3 & Precision. M. Kazi</p>
-       </div>
-    </footer>
+        <p class="text-[10px] text-slate-500">© 2026 Crafted with Vue 3 & Precision. M. Kazi</p>
+     </div>
+  </footer>
 
-  </div>
+  <SettingsPanel />
+</div>
 </template>
 
 <style>
