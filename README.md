@@ -1,6 +1,6 @@
-# Personal Portfolio - Vue 3
+# Web Professional Showcase
 
-A modern, elegant personal portfolio website built with Vue 3, TypeScript, and Tailwind CSS v4. Features dynamic theming, smooth animations, and a minimalist design aesthetic.
+A modern, elegant professional portfolio website built with Vue 3, TypeScript, and Tailwind CSS v4. Features dynamic theming, smooth animations, and a minimalist design aesthetic.
 
 ## Features
 

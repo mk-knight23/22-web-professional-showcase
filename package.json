@@ -1,5 +1,5 @@
 {
-  "name": "personal-portfolio-vue",
+  "name": "22-web-professional-showcase",
   "private": true,
   "version": "2.1.0",
   "type": "module",
@@ -8,6 +8,11 @@
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mk-knight23/22-web-professional-showcase.git"
+  },
+  "homepage": "https://mk-knight23.github.io/22-web-professional-showcase/",
   "dependencies": {
     "@motionone/vue": "^10.16.4",
     "@vueuse/core": "^14.1.0",
