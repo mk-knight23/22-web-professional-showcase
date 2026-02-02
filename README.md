@@ -1,6 +1,19 @@
-# Web Professional Showcase
+# 22 Web Professional Showcase
 
 A modern, elegant professional portfolio website built with Vue 3, TypeScript, and Tailwind CSS v4. Features dynamic theming, smooth animations, and a minimalist design aesthetic.
+
+## 📦 Deployment
+
+### Render (One-Click Deploy)
+This repository includes a `render.yaml` blueprint for automated deployment:
+1. Visit [dashboard.render.com](https://dashboard.render.com)
+2. Click "New +" → "Blueprint"
+3. Connect repository: `mk-knight23/22-web-professional-showcase`
+4. Render will auto-detect and apply the blueprint configuration
+
+### Manual Deployment
+- **Build Command**: `npm run build`
+- **Publish Directory**: `dist`
 
 ## Features
 
