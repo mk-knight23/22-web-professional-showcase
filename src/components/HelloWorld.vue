@@ -35,6 +35,7 @@ const count = ref(0)
 </template>
 
 <style scoped>
+@reference "../../style.css";
 .read-the-docs {
   color: #888;
 }

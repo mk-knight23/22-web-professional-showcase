@@ -1,67 +1,59 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #0f172a;
+  --color-brand-accent: #10b981;
+  --color-brand-slate: #64748b;
+  --color-brand-paper: #f8fafc;
+  --color-brand-bg: #f8fafc;
+
+  --font-display: "Playfair Display", serif;
+}
 
 :root {
   --brand-bg: #f8fafc;
   --app-bg-light: #f8fafc;
   --app-bg-dark: #0f172a;
-  color-scheme: dark;
+}
+
+html {
+  @apply scroll-smooth;
 }
 
 body {
   @apply bg-brand-bg text-slate-900 dark:text-slate-100 transition-colors duration-500 antialiased;
   margin: 0;
-  display: block;
   min-height: 100vh;
-}
-
-.dark {
-  color-scheme: dark;
-}
-
-.light {
-  color-scheme: light;
 }
 
 .dark body {
   @apply bg-slate-950 text-slate-100;
 }
 
-.light body {
-  @apply bg-slate-50 text-slate-900;
+@utility glass {
+  @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-md border border-slate-200/50 dark:border-slate-800/50;
 }
 
-kbd {
-  @apply px-2 py-1 text-xs font-mono bg-slate-200 dark:bg-slate-700 rounded;
+@utility custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @apply bg-slate-200 dark:bg-slate-800 rounded-full;
+  }
 }
 
-.font-display {
-  font-family: 'Playfair Display', serif;
+@utility gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 dark:from-white dark:via-slate-300 dark:to-white;
 }
 
 #app {
   max-width: none;
   margin: 0;
   padding: 0;
-}
-
-.glass {
-  @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-md border border-slate-200/50 dark:border-slate-800/50;
-}
-
-.custom-scrollbar::-webkit-scrollbar {
-  width: 4px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-track {
-  @apply bg-transparent;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  @apply bg-slate-200 dark:bg-slate-800 rounded-full;
-}
-
-.gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 dark:from-white dark:via-slate-300 dark:to-white;
 }

@@ -38,9 +38,9 @@ watchEffect(() => {
 const acccents = ['#10b981', '#3b82f6', '#f59e0b', '#ec4899', '#6366f1']
 
 const experience = [
-  { year: '2024', role: 'Staff Frontend Engineer', company: 'Global Tech' },
-  { year: '2022', role: 'Senior Product Designer', company: 'Creative Studio' },
-  { year: '2020', role: 'Vue Specialist', company: 'FinTech Hub' }
+  { year: '2024', role: 'Senior Software Engineer', company: 'Tech Innovations Inc.' },
+  { year: '2022', role: 'Full Stack Developer', company: 'Digital Solutions Ltd.' },
+  { year: '2020', role: 'Frontend Developer', company: 'StartUp Ventures' }
 ]
 
 function toggleTheme() {
@@ -189,7 +189,8 @@ function openSettings() {
 </div>
 </template>
 
-<style>
+<style scoped>
+@reference "./style.css";
 .gradient-text {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-slate-950 via-slate-700 to-slate-950 dark:from-white dark:via-slate-400 dark:to-white;
 }
