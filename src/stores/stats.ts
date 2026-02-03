@@ -21,8 +21,8 @@ function loadStats(): Stats {
     if (stored) {
       return { ...defaultStats, ...JSON.parse(stored) };
     }
-  } catch (e) {
-    console.warn('Failed to load stats');
+  } catch {
+    // Failed to load stats
   }
   return defaultStats;
 }
@@ -66,8 +66,8 @@ export const useStatsStore = defineStore('stats', () => {
         totalTimeSpent: totalTimeSpent.value,
         lastVisit: lastVisit.value,
       }));
-    } catch (e) {
-      console.warn('Failed to save stats');
+    } catch {
+      // Failed to save stats
     }
   }
 

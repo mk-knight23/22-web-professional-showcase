@@ -2,6 +2,16 @@
 
 A modern, elegant professional portfolio website built with Vue 3, TypeScript, and Tailwind CSS v4. Features dynamic theming, smooth animations, and a minimalist design aesthetic.
 
+## 🚀 Live Links
+
+| Platform | Status | URL |
+|----------|--------|-----|
+| GitHub Pages | ✅ Active | https://mk-knight23.github.io/22-web-professional-showcase/ |
+| Render | ✅ Ready | https://22-web-professional-showcase.onrender.com |
+| Vercel | ✅ Ready | https://22-web-professional-showcase.vercel.app |
+| Firebase | ✅ Ready | https://web-professional-showcase.web.app |
+| AWS Amplify | ✅ Ready | https://main.22-web-professional-showcase.amplifyapp.com |
+
 ## 📦 Deployment
 
 ### Render (One-Click Deploy)
@@ -10,6 +20,24 @@ This repository includes a `render.yaml` blueprint for automated deployment:
 2. Click "New +" → "Blueprint"
 3. Connect repository: `mk-knight23/22-web-professional-showcase`
 4. Render will auto-detect and apply the blueprint configuration
+
+### Vercel
+1. Visit [vercel.com](https://vercel.com)
+2. Import GitHub repository
+3. Framework preset: Vite
+4. Build command: `npm run build`
+5. Output directory: `dist`
+
+### Firebase
+```bash
+npm install -g firebase-tools
+firebase login
+firebase init hosting
+firebase deploy
+```
+
+### AWS Amplify
+Connect repository in AWS Amplify Console. The `amplify.yml` is pre-configured.
 
 ### Manual Deployment
 - **Build Command**: `npm run build`
