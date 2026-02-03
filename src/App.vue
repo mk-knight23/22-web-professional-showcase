@@ -1,21 +1,24 @@
 <script setup lang="ts">
 import { onMounted, watchEffect } from 'vue'
+import { RouterLink } from 'vue-router'
 import { usePersonalStore } from './stores/personalStore'
 import { useSettingsStore } from './stores/settings'
 import { useStatsStore } from './stores/stats'
 import { useAudio } from './composables/useAudio'
 import { useKeyboardControls } from './composables/useKeyboardControls'
 import SettingsPanel from './components/ui/SettingsPanel.vue'
-import { 
-  Github, 
-  Twitter, 
-  Linkedin, 
-  Mail, 
-  ArrowUpRight, 
-  Moon, 
+import {
+  Github,
+  Twitter,
+  Linkedin,
+  Mail,
+  ArrowUpRight,
+  Moon,
   Sun,
   ChevronRight,
-  Settings
+  Settings,
+  Home,
+  BarChart3
 } from 'lucide-vue-next'
 import { Motion } from '@motionone/vue'
 
@@ -57,6 +60,19 @@ function openSettings() {
 
 <template>
   <div class="min-h-screen selection:bg-brand-accent selection:text-white" :class="{ 'dark': settingsStore.isDarkMode, 'light': !settingsStore.isDarkMode }">
+    <!-- Navigation -->
+    <nav class="fixed top-4 left-4 z-50 flex items-center space-x-2 bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl p-2">
+      <RouterLink to="/" class="p-2 hover:bg-white/10 rounded-xl transition-all" title="Home">
+        <Home class="text-slate-300" :size="18" />
+      </RouterLink>
+      <RouterLink to="/stats" class="p-2 hover:bg-white/10 rounded-xl transition-all" title="Statistics">
+        <BarChart3 class="text-slate-300" :size="18" />
+      </RouterLink>
+      <RouterLink to="/settings" class="p-2 hover:bg-white/10 rounded-xl transition-all" title="Settings">
+        <Settings class="text-slate-300" :size="18" />
+      </RouterLink>
+    </nav>
+
     <!-- Theme Toggle Floating -->
     <div class="fixed top-8 right-8 z-50 flex items-center space-x-4">
        <div class="flex p-1.5 bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl">
@@ -186,6 +202,9 @@ function openSettings() {
   </footer>
 
   <SettingsPanel />
+
+  <!-- Router View for Stats and Settings pages -->
+  <RouterView />
 </div>
 </template>
 
