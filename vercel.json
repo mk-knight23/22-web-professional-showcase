@@ -1,5 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "name": "22-web-professional-showcase",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
