@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --color-brand-primary: #0f172a;
@@ -7,7 +7,7 @@
   --color-brand-paper: #f8fafc;
   --color-brand-bg: #f8fafc;
 
-  --font-display: "Playfair Display", serif;
+  --font-display: 'Playfair Display', serif;
 }
 
 :root {

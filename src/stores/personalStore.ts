@@ -14,6 +14,6 @@ export const usePersonalStore = defineStore('personal', {
     },
     setAccent(color: string) {
       this.accentColor = color
-    }
-  }
+    },
+  },
 })

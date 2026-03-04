@@ -7,7 +7,11 @@
         <div class="flex items-center justify-between mb-4">
           <span>Theme</span>
           <button
-            @click="userStore.updateSettings({ theme: userStore.settings.theme === 'light' ? 'dark' : 'light' })"
+            @click="
+              userStore.updateSettings({
+                theme: userStore.settings.theme === 'light' ? 'dark' : 'light',
+              })
+            "
             class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700"
           >
             {{ userStore.settings.theme === 'light' ? '🌙' : '☀️' }}
@@ -18,7 +22,11 @@
           <button
             @click="userStore.updateSettings({ notifications: !userStore.settings.notifications })"
             class="px-4 py-2 rounded-lg"
-            :class="userStore.settings.notifications ? 'bg-green-500 text-white' : 'bg-gray-300 text-gray-700'"
+            :class="
+              userStore.settings.notifications
+                ? 'bg-green-500 text-white'
+                : 'bg-gray-300 text-gray-700'
+            "
           >
             {{ userStore.settings.notifications ? 'On' : 'Off' }}
           </button>

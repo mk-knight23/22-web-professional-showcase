@@ -29,6 +29,6 @@ export const useUserStore = defineStore('user', () => {
     updateProfile,
     updateSettings,
     incrementVisits,
-    incrementProjects
+    incrementProjects,
   }
 })

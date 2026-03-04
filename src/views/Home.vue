@@ -9,7 +9,9 @@
       </div>
       <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
         <h2 class="text-xl font-semibold mb-2">About</h2>
-        <p class="text-gray-600 dark:text-gray-400">Learn more about your professional background.</p>
+        <p class="text-gray-600 dark:text-gray-400">
+          Learn more about your professional background.
+        </p>
       </div>
     </div>
   </div>

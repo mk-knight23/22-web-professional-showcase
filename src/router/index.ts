@@ -8,8 +8,8 @@ const router = createRouter({
   routes: [
     { path: '/', component: Home },
     { path: '/stats', component: Stats },
-    { path: '/settings', component: Settings }
-  ]
+    { path: '/settings', component: Settings },
+  ],
 })
 
 export default router
