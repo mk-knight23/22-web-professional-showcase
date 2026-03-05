@@ -1,0 +1,15 @@
+# GitHub Pages Configuration
+theme: jekyll-theme-cayman
+title: Professional Portfolio Showcase
+description: Documentation for 22-web-professional-showcase
+baseurl: /22-web-professional-showcase
+url: https://mk-knight23.github.io
+
+# Navigation
+nav:
+  - title: Home
+    url: /
+  - title: Architecture
+    url: /architecture/
+  - title: API
+    url: /api/
