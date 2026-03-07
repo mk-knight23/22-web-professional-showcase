@@ -1,0 +1,47 @@
+# Heroku Slug Ignore
+# FIXED: Files excluded from slug to reduce size
+
+# Development files
+.git
+.gitignore
+.env
+.env.local
+.env.*.local
+
+# Documentation
+*.md
+docs/
+content/
+marketing/
+EVOLUTION.md
+FEATURES.md
+UPGRADE.md
+SECURITY.md
+
+# Test files
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+tests/
+coverage/
+.vitest/
+
+# CI/CD
+.github/
+.vscode/
+.idea/
+
+# Build caches
+.cache/
+.parcel-cache/
+
+# Source maps (optional)
+# *.map
+
+# Logs
+*.log
+logs/
+
+# Architecture docs
+architecture/

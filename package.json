@@ -11,13 +11,17 @@
     "lint:fix": "eslint . --ext .vue,.ts,.tsx --fix",
     "format": "prettier --write .",
     "test": "vitest run",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mk-knight23/22-web-professional-showcase.git"
   },
   "homepage": "https://mk-knight23.github.io/22-web-professional-showcase/",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "dependencies": {
     "@motionone/vue": "^10.16.4",
     "@vueuse/core": "^14.1.0",
@@ -37,7 +41,6 @@
     "typescript": "~5.9.3",
     "vite": "^7.2.4",
     "vue-tsc": "^3.1.4",
-    "": "testing-library/vue",
     "eslint-plugin-vue": "^9",
     "jsdom": "^24",
     "prettier": "^3",
